@@ -20,13 +20,16 @@
     <meta name="baidu-site-verification" content="wXGZ5gsqHZ" />
 
 
-    <script src="scripts/vendor/ab.plus.js" charset="utf-8"></script>
+    <script src="scripts/plus/ab.plus.js" charset="utf-8"></script>
+	<!--<script src="scripts/super/ab.super.js" charset="utf-8"></script>-->
 	<!--  <script src="https://sdk.appadhoc.com/ab.plus.js" charset="utf-8"></script>-->
 	<!--<script src="https://sdk.appadhoc.com/ab.super.js" charset="utf-8"></script>-->
    <script type="text/javascript">
 
         adhoc('init', {
-			appKey: 'ADHOC_5f25fa51-bbbd-44de-9c43-336cf635dda0'
+			appKey: 'ADHOC_5f25fa51-bbbd-44de-9c43-336cf635dda0',
+				crossDomain: 'weixiaona123.github.io', //跨页面统计设置主域名, 选填, 例如 'dev.com'
+				clientIdDomain: 'weixiaona123.github.io' // 指定设置clientid存储的主域名, 选填, 例如 'dev.com'
         })
 adhoc('setOverlay', true);
     </script>
