@@ -18,23 +18,44 @@
     <script src="scripts/vendor/modernizr.cf086204.js"></script>
     <meta name="google-site-verification" content="d5Qycne0FWDdSS5TfoqxAvhVI1MBgNONB5UF2cKsYf4" />
     <meta name="baidu-site-verification" content="wXGZ5gsqHZ" />
+	<!--<script type="text/javascript">
+        window.adhoc_domain_stat_api = 'http://data.dev.com';
+		window.adhoc_domain_exp_api = 'http://experiment-control.dev.com';
+		window.adhoc_domain_auth_api = 'http://auth.dev.com';
+        // 下面这两个写一个即可
+        window.adhoc_domain_isForbiddenSnap = true; // 是否禁止截图
+		window.__ADHOC_EXP_URL__ = "http://experiment.dev.com/get_flags_async";
+		window.__ADHOC_TRACKER_URL__ = "http://tracker.dev.com/tracker";
+	</script>-->
 
-	 <!--<script src="scripts/plus/ab.plus.js" charset="utf-8"></script>
-	<script src="scripts/super/ab.super.js" charset="utf-8"></script>-->
-	 <!--<script src="scripts/v6/ab.v6.js" charset="utf-8"></script>-->
-	<script src="https://sdk.appadhoc.com/ab.plus.js" charset="utf-8"></script>
-	<!-- <script src="https://sdk.appadhoc.com/ab.super.js" charset="utf-8"></script>-->
+    <!--<script src="scripts/plus/ab.plus.js" charset="utf-8"></script>-->
+	<script src="scripts/super/ab.super.js" charset="utf-8"></script>
+	<!--<script src="scripts/v6/ab.plus.js" charset="utf-8"></script>-->
+	<!--<script src="https://sdk.appadhoc.com/ab.plus.js" charset="utf-8"></script>
+	<script src="https://sdk.appadhoc.com/ab.super.js" charset="utf-8"></script>-->
 	
 	<script type="text/javascript">
-			//setAbtestingEditorUrl = "./adhoc-editor.js";
+			//setAbtestingEditorUrl = "./scripts/siyou/super/adhoc-editor.js";
 			adhoc('init', {
-				appKey: 'ADHOC_182e78d8-4f46-49ac-b22d-ee7a8e855525'
-				//sourceKey:'AA',
-				//filterUrlParams: true
-
+				appKey: 'ADHOC_56899d35-dc4b-48a6-9e63-9ed61f715dfd'
 			})
 	</script>
+	
+	<!--v6
+	<script type="text/javascript">
+ 
+			setAbtestingEditorUrl = "./scripts/siyou/super/adhoc-editor.js";// 编辑器  根据实际情况填写
 
+			adhoc('init', {
+				appKey: 'ADHOC_5f25fa51-bbbd-44de-9c43-336cf635dda0', // appKey写自己的
+				sourceKey: 'source',
+				host: {
+					expUrl: 'http://experiment.dev.com/get_flags_async',
+					trackerUrl: 'http://tracker.dev.com/tracker'
+			   }
+			})
+	</script>-->
+	<!--v6结束-->
 
     <script type="text/javascript">window._pt_lt = new Date().getTime();</script>
 
@@ -490,7 +511,7 @@ window.registerPopHide = function(){
 
 <section class="first-screen">
     <div class="screen-section-inner first-screen-inner" id="js-title-edits">
-        <h1 id="js-test-editor" class="title 123" onClick="test()" abc="123" efg="456" style="font-style: italic;" title="测试手册">连接数据与决策，让创新推动业务持续增长</h1>
+        <h1 id="js-test-editor" class="title 123" onClick="test()" abc="123" efg="456" style="font-style: italic;">连接数据与决策，让创新推动业务持续增长</h1>
         <h1 onClick="test()" class="title" abc="123">连接数据与决策，让创新推动业务持续增长</h1>
         <h1 onClick="test()" class="title" abc="123">连接数据与决策，<br >让创新推动业务持续增长</h1>
         <h1>无属性标签</h1>
@@ -498,8 +519,8 @@ window.registerPopHide = function(){
         <h1 class="js-same-class">same class 01</h1>
         <h1 class="js-only-class">only class</h1>
         <a id="js-editoe-a" href="http://www.appadhoc.com/" class="btn-no-border" alt="testsss" onClick="test()">产品及服务</a>
-        <!--<div>
-            <form action="/demo/demo_form.asp"> 
+        <div>
+            <!-- <form action="/demo/demo_form.asp"> -->
             <form>
                 First name:<br>
                 <input type="text" name="firstname" value="Mickey">
@@ -511,9 +532,9 @@ window.registerPopHide = function(){
             </form> 
         </div>
         <p class="des">Appadhoc A/B Testing 提供专业高效的试验平台，低风险获取可靠决策数据，低成本实现产品快速迭代，从而保证业务健康持续增长。</p>
-        <img src="images/productService/productbanner.521895ea.png" srcset="images/productService/productbanner@2x.cc0d7ad6.png 2x" class="section-banner" alt="助力优秀企业走向卓越">-->
+        <img src="images/productService/productbanner.521895ea.png" srcset="images/productService/productbanner@2x.cc0d7ad6.png 2x" class="section-banner" alt="助力优秀企业走向卓越">
     </div>
-    <!--<div class="same-screen">
+    <div class="same-screen">
         <p class="se">same parent 01 1111111</p>
         <p class="se">same parent 01 22222222</p>
     </div>
@@ -562,7 +583,7 @@ window.registerPopHide = function(){
         <a href="https://www.baidu.com/" class="class-aa" id="aa-00-4" target="_blank">4产品及服务</a>
         <a href="https://www.baidu.com/" class="class-aa" id="aa-00-5" target="_blank">5产品及服务</a>
         <a href="https://www.baidu.com/" class="class-aa" id="aa-00-6" target="_blank">6产品及服务</a>
-    </div>-->
+    </div>
 
 </section>
 
