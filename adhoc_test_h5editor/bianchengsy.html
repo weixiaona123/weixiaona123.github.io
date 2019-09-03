@@ -18,30 +18,32 @@
     <script src="scripts/vendor/modernizr.cf086204.js"></script>
     <meta name="google-site-verification" content="d5Qycne0FWDdSS5TfoqxAvhVI1MBgNONB5UF2cKsYf4" />
     <meta name="baidu-site-verification" content="wXGZ5gsqHZ" />
-	<!--<script type="text/javascript">
-			window.adhoc_domain_stat_api = 'http://data.wenbo.com';
-			window.adhoc_domain_exp_api = 'http://experiment-control.wenbo.com';
-			window.adhoc_domain_auth_api = 'http://auth.wenbo.com';
+	<script type="text/javascript">
+			window.adhoc_domain_stat_api = 'http://data.wsgaohaows.xyz';
+			window.adhoc_domain_exp_api = 'http://ab.hwwt2.com/experiment';
+			window.adhoc_domain_auth_api = 'http://ab.hwwt2.com/auth';
 			// 下面这两个写一个即可
 			// window.adhoc_domain_snapshot_api = '';
 			window.adhoc_domain_isForbiddenSnap = true; // 是否禁止截图
 			
-			window.__ADHOC_EXP_URL__ = "http://experiment.wenbo.com/get_flags_async";
-			window.__ADHOC_TRACKER_URL__ = "http://tracker.wenbo.com/tracker";
+			window.__ADHOC_EXP_URL__ = "http://ab.hwwt2.com/experiment/get_flags_async";
+			window.__ADHOC_TRACKER_URL__ = "http://ab.hwwt2.com/tracker/tracker";
 	</script>
-	<script src="scripts/plus/ab.plus.js" charset="utf-8"></script>-->
-	<!-- <script src="scripts/super/ab.super.js" charset="utf-8"></script>-->
+	<!--<script src="scripts/plus/ab.plus.js" charset="utf-8"></script>-->
+	<script src="scripts/siyou/plus/ab-baisheng.plus.js" charset="utf-8"></script>
+	<!--<script src="scripts/super/ab.super.js" charset="utf-8"></script>-->
     <!--<script src="scripts/vendor/ab.plus.js" charset="utf-8"></script>-->
-	<!--  <script src="https://sdk.appadhoc.com/ab.plus.js" charset="utf-8"></script>-->
-	<script src="https://sdk.appadhoc.com/ab.super.js" charset="utf-8"></script>
+	<!--  <script src="https://sdk.appadhoc.com/ab.plus.js" charset="utf-8"></script>
+	<script src="https://sdk.appadhoc.com/ab.super.js" charset="utf-8"></script>-->
 	<script type="text/javascript">
 			var new_clientid=Number(new Date());
 			adhoc('init', {
-				appKey: 'ADHOC_edd21a75-40a3-4b33-8153-3116f1c79ab2',
+				appKey: 'ADHOC_5f96d508-98bd-4ee4-a215-a2a3dc508fe8',
 				//clientId: new_clientid, //客户自定义的clientId，选填
 				//defaultFlags: {flag: 0}, //编程模式必填：设置试验变量默认值，通常为0
-				//crossDomainDuration :4
-				//domain:'wenbo.com'
+				//crossDomainDuration :2,
+				domain:'ab.hwwt2.com',
+				custom: {"market":"动北"}
 				
 			})
 			
@@ -163,7 +165,7 @@
    <script>
    		  function applyFlags(flags) {
 			//applyFlags:callback函数名称
-			adhoc('track', 'click1', 1, function(error){
+			adhoc('track', 'clickTimes', 1, function(error){
 				if(error){
 					//i don't know, maybe you can do something cool.
 				}else{
