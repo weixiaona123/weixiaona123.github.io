@@ -18,50 +18,49 @@
     <script src="scripts/vendor/modernizr.cf086204.js"></script>
     <meta name="google-site-verification" content="d5Qycne0FWDdSS5TfoqxAvhVI1MBgNONB5UF2cKsYf4" />
     <meta name="baidu-site-verification" content="wXGZ5gsqHZ" />
-	<!--<script type="text/javascript">
-			window.adhoc_domain_stat_api = 'http://data.wenbo.com';
-			window.adhoc_domain_exp_api = 'http://experiment-control.wenbo.com';
-			window.adhoc_domain_auth_api = 'http://auth.wenbo.com';
+	<script type="text/javascript">
+			window.adhoc_domain_stat_api = 'http://test.wsqazwsx.www/data';
+			window.adhoc_domain_exp_api = 'http://test.wsqazwsx.www/experiment';
+			window.adhoc_domain_auth_api = 'http://test.wsqazwsx.www/auth';
 			// 下面这两个写一个即可
 			// window.adhoc_domain_snapshot_api = '';
 			window.adhoc_domain_isForbiddenSnap = true; // 是否禁止截图
 			
-			window.__ADHOC_EXP_URL__ = "http://experiment.wenbo.com/get_flags_async";
-			window.__ADHOC_TRACKER_URL__ = "http://tracker.wenbo.com/tracker";
-	</script>
-	<script src="scripts/plus/ab.plus.js" charset="utf-8"></script>-->
-	<!-- <script src="scripts/super/ab.super.js" charset="utf-8"></script>-->
-    <!--<script src="scripts/vendor/ab.plus.js" charset="utf-8"></script>-->
-	<!--  <script src="https://sdk.appadhoc.com/ab.plus.js" charset="utf-8"></script>-->
-	<script src="https://sdk.appadhoc.com/ab.super.js" charset="utf-8"></script>
-	<script type="text/javascript">
-			var new_clientid=Number(new Date());
-			adhoc('init', {
-				appKey: 'ADHOC_edd21a75-40a3-4b33-8153-3116f1c79ab2',
-				//clientId: new_clientid, //客户自定义的clientId，选填
-				//defaultFlags: {flag: 0}, //编程模式必填：设置试验变量默认值，通常为0
-				//crossDomainDuration :4
-				//domain:'wenbo.com'
-				
-			})
-			
-			function getCookie(){
-				var strcookie = document.cookie;//获取cookie字符串
-				var arrcookie = strcookie.split("; ");//分割
-				//遍历匹配
-				for ( var i = 0; i < arrcookie.length; i++) {
-				var arr = arrcookie[i].split("=");
-				console.log(arr[1]);
-				return arr[1];
-			}
-			}
-			//setTimeout(function(){alert(getCookie())},3000)
-			//setTimeout(function(){alert(getCookie())},4000)
-			//setTimeout(function(){alert(getCookie())},5000)
-			
-			 
+			window.__ADHOC_EXP_URL__ = "http://test.wsqazwsx.www/experiment/get_flags_async";
+			window.__ADHOC_TRACKER_URL__ = "http://test.wsqazwsx.www/tracker/tracker";
 	</script>
 
+    <!--<script src="scripts/plus/ab.plus.js" charset="utf-8"></script>
+	 <script src="scripts/siyou/plus/ab.super1.js" charset="utf-8"></script>-->
+	 <script src="scripts/siyou/plus/ab-baisheng.plus.js" charset="utf-8"></script>
+	<!--<script src="scripts/v6/ab.plus.js" charset="utf-8"></script>-->
+	<!--<script src="https://sdk.appadhoc.com/ab.plus.js" charset="utf-8"></script>-->
+	<!--<script src="https://sdk.appadhoc.com/ab.super.js" charset="utf-8"></script>-->
+	
+	<script type="text/javascript">
+			//setAbtestingEditorUrl = "./scripts/siyou/super/adhoc-editor.js";
+			adhoc('init', {
+				appKey: 'ADHOC_bd0941b4-cd44-41dd-bd20-66f1e1fc189a',
+				//sourceKey:'aa',
+				domain: 'test.wsqazwsx.www'
+			})
+	</script>
+	
+	<!--v6
+	<script type="text/javascript">
+ 
+			setAbtestingEditorUrl = "./scripts/siyou/super/adhoc-editor.js";// 编辑器  根据实际情况填写
+
+			adhoc('init', {
+				appKey: 'ADHOC_5f25fa51-bbbd-44de-9c43-336cf635dda0', // appKey写自己的
+				sourceKey: 'source',
+				host: {
+					expUrl: 'http://experiment.dev.com/get_flags_async',
+					trackerUrl: 'http://tracker.dev.com/tracker'
+			   }
+			})
+	</script>-->
+	<!--v6结束-->
     <script type="text/javascript">window._pt_lt = new Date().getTime();</script>
 
     
@@ -81,28 +80,11 @@
   </head>
   <body>
     <script src="scripts/jquery.6c7dba82.js"></script>
- <script>
-  adhoc('on','MatchExperiment', function(a){
-				console.log(a);
-				
-			})
-			adhoc('on','Track', function(event) {
-				console.log(event);
-				
-			  // event 
-			  // {
-			  //  expids: ['xx-xxxxxx'],
-			  //  statname: 'PV',
-			  //  value: 1
-			  // }
+  
 
-			 })
-  </script>
- 
 <header class="ab-nav-container">
     <div class="ab-nav-inner">
         <a href="//www.appadhoc.com/" class="head-logo" title="A/B测试数据分析"></a>
-		<input type="button" value="上报" onclick="adhoc('getFlags', applyFlags)"/>
         <div class="ab-nav-right">
             <ul class="ab-nav-menu">
                 <li class="ab-pop-down-btn"><a href="javascript:void(0)" class="btn-no-border" target="_blank">产品及服务</a>
@@ -160,46 +142,31 @@
 		}
 
 	</script>
-   <script>
-
-   		  function applyFlags(flags) {
+     <!--   <script>
+		  function applyFlags(flags) {
 			//applyFlags:callback函数名称
-			adhoc('track', 'click1', 1, function(error){
-				if(error){
-					//i don't know, maybe you can do something cool.
-				}else{
-
-				}
-			  });
 			if (flags.get('flag') === 1) {
-			  console.log("版本1");
+			  //isNewHomePage:试验变量名称，和试验平台填写的名称保持一致；
+			  var text = "请填写试验版本要展示的文案！";
+			  alert("试验版本1");
+			  document.getElementById("js-btn-apply03").innerText ="版本1"
+			  document.getElementById("js-btn-apply03").style.color="#FF0000";
 			  var ids = adhoc('getMatchedExpIds');
 			  console.log(ids);
-			var flag = flags.get('flag');
-			console.log('试验版本flag--'+flag);
-			// 例如: 获取可视化试验的版本信息
-			var exps = adhoc('getMatchedExps');
-			console.log(exps);
-			var jsonData = JSON.stringify(exps)
-			var result = $.parseJSON(jsonData)
-			console.log(result[0].name)
-			alert(result[0].name);
-			//获得clientid
-			var clientid = adhoc('getCurClientId');
-			console.log('试验的clientid--'+clientid);
-			// 隐藏元素
-			adhoc('hide','.ab-nav-right');
-			} else if (flags.get('flag') === 0) {
-			  console.log("原始版本");
+			  alert("id=="+ids.length+ids[0]);
+			  var exps = adhoc('getMatchedExps');
+			  console.log(exps);
+			  
+			  var jsonData = JSON.stringify(exps[0]);// 转成JSON格式
+			  var result = $.parseJSON(jsonData);// 转成JSON对象
+			  alert("exps=="+jsonData);
 			} else {
-			  console.log("版本2");
+			  var text = "请填写原始版本要展示的文案！";
+			  alert("原始版本");
 			}
-			
-
 		  }
 	
-	
-		</script>
+		</script>-->
 		
         <script type="text/javascript">
 
@@ -210,7 +177,6 @@
             <i class="line"></i>
         </div>
     </div>
-	
 </header>
 	
 <div class="ab-nav-menu-mobile">
@@ -224,7 +190,6 @@
     </ul>
 
 </div>
-
 <section class="register-pop-container" style="z-index: 900">
     <div class="register-pop-inner">
         <div class="register-content">
@@ -262,7 +227,6 @@
     </div>
     
 </section>
-
 <script type="text/javascript">
 (function(){
 function checkEmail(email){
@@ -542,7 +506,6 @@ window.registerPopHide = function(){
 <script type="text/javascript">
    function test(){
     //    console.log('123');
-	//显示元素
 	adhoc('show','.ab-nav-right');
     alert('12');
     }
@@ -614,20 +577,7 @@ window.registerPopHide = function(){
             para3.appendChild(para);
             para3.appendChild(para2);
         }
-
-
     </script>
-	<!--<script type = 'text/javascript' > $(function() {
-    $('button').click(function() {
-		  //function:回调函数；
-		  adhoc('track', 'a', 1);
-	
-		  //track:表示这次函数调用的作用是上报数据;
-		  //clickTimes:这是上报指标名称，必须和平台填写的优化指标名称保持一致；
-		  //1:统计点击次数+1
-		});
-	})
-	</script>-->
 
     <a><img src="images/productService/productbanner.521895ea.png" class="section-banner" alt="助力优秀企业走向卓越"></a>
     <div>
@@ -859,5 +809,4 @@ window.registerPopHide = function(){
     <script src="scripts/header.a982303e.js"></script>
   
   </body>
-  
 </html>
